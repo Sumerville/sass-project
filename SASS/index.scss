@@ -1,0 +1,303 @@
+
+@import "./variable";
+@import "./reset";
+@import "./mixin";
+
+@function calculateFont($font){
+    @if($font <= 10px){
+        $font: $font * 3;
+       
+    } @else if($font >= 30px){
+        $font: $font;
+    }@else{
+        $font: $font * 2;
+    }
+    @return $font;
+}
+
+.navigation{background-color: darken($primary, 20%);  display: $flex; 
+justify-content: space-between; padding: $spacing-sm *2; align-items: center;
+img{width: $spacing-lg *3; height:$spacing-lg *2;}
+img:hover{ transform: rotate(360deg);}
+h2{color: $white; font-size: $spacing-lg;}
+ 
+ ul{display: $flex; list-style: $none; 
+    li{
+    a{text-decoration: $none; padding: $spacing-md; color: $alice; font-size: $spacing-md - 2;}
+    a:hover{transform: scale(0.9); border-bottom: 1px solid #179bf9;
+     border-top: 1px solid #179bf9; border-left: 1px solid #179bf9; 
+     border-right: 1px solid #179bf9; color: $white;}
+     display: grid;
+   
+}
+
+}}
+.welcome {width: 100%;height: 22vh; display: flex; justify-content: center; align-items: center; color: $alice;
+h2{letter-spacing: 5px; font-size: 40px; font-weight: 600; position: relative; z-index: 1; color: $alice;}
+h2::before, h2::after{
+  content: "";
+  padding: 50px;
+  position: absolute;
+  left: 0; top: 50%; display: block;
+  transform: translateX(-50%) translateY(-50%) rotate(0);
+animation: spin 6s alternate infinite ease-in-out;
+}
+h2::before{
+  border-top: 15px solid $alice;
+  border-left: 15px solid $alice;
+}
+ h2::after{ border-bottom: 15px solid $alice;
+  border-right: 15px solid $alice; z-index: -1;}
+@keyframes spin {
+  100%{
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+}
+
+.banner{display: $block;
+.banner-content{ width: 80%; margin: auto;
+    h3{
+        font-size: $spacing-md; margin-bottom: $spacing-sm + 10px;
+    }
+    h4{margin-bottom: $spacing-lg *2.5;}
+    h4{color: $alice;}
+    .my-name{
+      h1{ margin-bottom: $spacing-lg; letter-spacing: 5px;}color: $alice;
+      position: absolute; top: 50%;  font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-shadow: 1px 1px 1px #919191,
+      1px 2px 1px #919191,
+      1px 3px 1px #919191,
+      1px 4px 1px #919191,
+      1px 5px 1px #919191,
+      1px 6px 1px #919191,
+      1px 7px 1px #919191,
+      1px 8px 1px #919191,
+   
+    }
+   
+    h3{color: darken($alice, 2%)}
+    p{font-size: $spacing-sm + 8px; line-height: $spacing-md + 5px; margin-bottom: $spacing-md; color: darken($alice, 2%) }
+   /*.btn1{ @include btn($primary, $white, $none);}
+   .btn2{ @include btn(transparent, $aqua, 1px solid $aqua);}*/
+.btn2{padding: 20px 50px; text-transform: uppercase; border: 2px solid $alice; background: 
+    transparent; color: $white; font-size: $spacing-md; font-weight: bolder;}
+   .btn2:hover{transform:scale(1.01); border: 1px solid aqua;}
+   /*.btnn{position: relative; font-size: 15px; color: aqua; border: 2px solid aqua; background: transparent;
+margin: 0 20px; padding: 20px 60px; text-transform: uppercase; font-weight: bolder; transition: 0.4s all ease-in-out 0s;
+}*/
+.btn1:hover{background-color: blue;};
+ .btnn:hover{
+    color: $alice;
+ }
+ .btn2::before{content: "";
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color:rgb(14, 136, 136);
+    transition: 0.4s all ease-in-out 0s;
+ }
+ .btn2::before{left: unset; right: 0; width:0;}
+ .btn2:hover::before{right: unset; left: 0; width: 100%;}
+   height: $spacing-lg *18; padding-top: $spacing-lg *3;
+}   
+background-color: darken($primary, 20%);
+
+}
+
+
+.poping{
+  .popup{ display: none; width: 400px; height: 400px; background-color: $grey; position: absolute;
+    border-radius:$spacing-sm - 4;  top: 30%; left: 60%; 
+    text-align: center; color: $aqua; padding: 0 30px 30px;
+    h2{margin-top: $spacing-lg * 2;}
+    p{margin-top: $spacing-md; line-height: $spacing-lg;}
+     button{width: 100%; margin-top: $spacing-lg + 20; padding: 10px 0;
+      outline: none; border: 0; border-radius: 4px; font-size: $spacing-md - 2;
+      cursor: pointer;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+      }
+      
+      li{margin-bottom: $spacing-sm;}
+      a{text-decoration: none; color: $alice; list-style: none; margin-bottom: $spacing-sm;}
+    }
+  
+}
+
+
+
+
+.my-section{
+
+  
+
+
+    display: $flex;
+   
+    .about-me{width: 20%; margin: auto;
+      h3{color: $alice; margin-bottom: $spacing-md;} 
+      p{color: darken($alice, 2%);line-height: $spacing-lg; margin-bottom: $spacing-md;} 
+      p:hover{transform: scale(1.05); color: $aqua;}
+      h3:hover{transform: scale(1.05); color: $aqua; text-transform: uppercase;}
+      .btn3{padding: 20px 50px; text-transform: uppercase; border: 2px solid $alice; background: 
+        transparent; color: $white; font-size: $spacing-md; font-weight: bolder;}
+      /*.btn3:hover{transform:scale(1.01); border: 1px solid rgb(255, 255, 255); background-color: darken ($aqua, 1%); color:$aqua;}*/
+      .btn3:hover{transform:scale(1.01); border: 1px solid aqua;}
+    
+.btn3::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color:rgb(14, 136, 136);
+    transition: 0.4s all ease-in-out 0s;
+
+}
+     
+.btn3::before{left: unset; right: 0; width:0;};
+.btn3:hover::before{right: unset; left: 0; width: 100%;};
+.fading{display: none; margin-top: $spacing-lg; font-size: $spacing-lg; font-weight: bolder;
+  
+  .mypix { margin-left: $spacing-sm *10;
+    img{width: 30px; height: 60px;}
+  }
+
+}
+  h5{ color: $alice;}
+
+    }
+
+
+   
+
+    .my-image{width: 30%; margin: auto; 
+        img{width: 100%; height: $spacing-lg * 15;} 
+        
+        .me{width: 458px; height: 458px; perspective: 500px; border: 1px solid aliceblue; background-color: darken($primary, 20%);}
+        .me img{transform: translate3d(-45px, -45px, 45px);}
+   
+    }
+    height: $spacing-lg * 20;
+
+ 
+}
+
+.services{
+background-color: darken($primary, 20%);
+
+    .grid-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .grids {
+        width: 100%;
+        position: relative;
+      }
+      .grids-bg {
+        height: 300px;
+        background-size: cover;
+      }
+      .grids-top5 {
+        background-image: url(../images/Web-dev1.jpg);
+      }
+      .grids-top2 {
+        background-image: url(../images/Graphics2.jpg);
+      }
+      .grids-top3 {
+        background-image: url(../images/d-marketing2.jpg);
+
+      }
+      .grids-top4 {
+        background-image: url(../images/user-design1.jpg);}
+
+        .grids-top6 {
+            background-image: url(../images/V-editing1.jpg);
+    
+          }
+
+          .grids-top7 {
+            background-image: url(../images/d-marketing1.jpg);
+    
+          }
+      .grid-label {
+        display: inline-block;
+        background-color: darken($primary, 20%);
+        padding: 3px 25px 3px 5px;
+        text-transform: uppercase;
+        color: $alice;
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-left: $spacing-lg - 10;
+      }
+      .grid-overlay {
+        height: 300px;
+        width: 100%;
+        background-color:rgba(0, 0, 0, 0.5);
+    position: absolute;
+        top: 0;
+        display: none;
+      }
+      .overlay-content {
+        width: 60%;
+        margin: 20% auto;
+        color:$alice;
+        text-transform: uppercase;
+      }
+      .overlay-content a {
+        color: $alice;
+        text-decoration: none;
+        padding: $spacing-sm $spacing-md + 5;
+        font-size: $spacing-sm + 4;
+        border: 1px solid $alice;
+        display: inline-block;
+        margin-top: $spacing-sm;
+      }
+  
+    h3{text-align: center; font-size: $spacing-md + 5px; color: $alice; margin-bottom: $spacing-sm;}
+}
+
+.form{
+    width: 40%;
+    margin: $spacing-lg auto;
+    .form-group{
+        margin-bottom: $spacing-sm;
+        input{
+            @include form-control;
+        }
+        textarea{
+            @extend input;
+            min-height: 50px;
+        }
+        button{
+            @include btn($primary, $white, $none);
+            &:hover{background-color: darken(blue, 20%); }
+        }
+    }
+    .form-group span{font-size: $spacing-md; margin-left: $spacing-sm; color: rgb(241, 88, 88);}
+}
+.contact{background-color: darken($grey, 20%); height: $spacing-md * 30; margin-top: $spacing-md;
+h2, label{color: $alice;}
+
+}
+footer{
+  display: $flex; justify-content: space-evenly; background-color: darken($primary, 20%); height: $spacing-lg *3;
+  .col1{ padding-top: $spacing-md *2; gap: 50px;
+    .pix{ display: $flex; img{width:$spacing-lg ; height: $spacing-lg;}
+ 
+    .pix2 {margin-left: $spacing-sm;}
+    .pix3 {margin-left: $spacing-sm; margin-right: $spacing-sm;}
+    .pix4 {margin-left: $spacing-sm;}
+  } 
+
+  } 
+  .col2{padding-top: $spacing-md *2;
+  p{color: $alice;}
+  }
+}

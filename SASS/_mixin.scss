@@ -1,0 +1,13 @@
+@mixin btn ($bg, $color, $border){
+    border: $border; background-color: $bg; color: $color;
+    padding: $spacing-sm $spacing-lg; border-radius: 3px; 
+    font-size: $spacing-sm +4px; cursor: pointer; outline: none;
+}
+
+@mixin form-control{ background-color: $light-grey;
+    border: $none;
+    padding:  $spacing-sm 5px ;
+    outline: $none;
+    width: 100%;
+    display: block;
+}

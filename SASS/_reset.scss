@@ -1,0 +1,13 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+body { font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: $grey;}
+.section-heading{
+    font-size: calculateFont(30px);
+    padding: $spacing-md;
+    text-align: center;
+    text-decoration:underline;
+    text-decoration-thickness:5px;
+}

@@ -1,0 +1,479 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: grey;
+}
+
+.section-heading {
+  font-size: calculateFont(30px);
+  padding: 20px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+}
+
+.navigation {
+  background-color: #131339;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+.navigation img {
+  width: 90px;
+  height: 60px;
+}
+.navigation img:hover {
+  transform: rotate(360deg);
+}
+.navigation h2 {
+  color: #ffffff;
+  font-size: 30px;
+}
+.navigation ul {
+  display: flex;
+  list-style: none;
+}
+.navigation ul li a {
+  text-decoration: none;
+  padding: 20px;
+  color: aliceblue;
+  font-size: 18px;
+}
+.navigation ul li a:hover {
+  transform: scale(0.9);
+  border-bottom: 1px solid #179bf9;
+  border-top: 1px solid #179bf9;
+  border-left: 1px solid #179bf9;
+  border-right: 1px solid #179bf9;
+  color: #ffffff;
+}
+
+.welcome {
+  width: 100%;
+  height: 22vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+}
+.welcome h2 {
+  letter-spacing: 5px;
+  font-size: 40px;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  color: aliceblue;
+}
+.welcome h2::before, .welcome h2::after {
+  content: "";
+  padding: 50px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: block;
+  transform: translateX(-50%) translateY(-50%) rotate(0);
+  -webkit-animation: spin 6s alternate infinite ease-in-out;
+          animation: spin 6s alternate infinite ease-in-out;
+}
+.welcome h2::before {
+  border-top: 15px solid aliceblue;
+  border-left: 15px solid aliceblue;
+}
+.welcome h2::after {
+  border-bottom: 15px solid aliceblue;
+  border-right: 15px solid aliceblue;
+  z-index: -1;
+}
+@-webkit-keyframes spin {
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+
+.banner {
+  display: block;
+  background-color: #131339;
+}
+.banner .banner-content {
+  width: 80%;
+  margin: auto;
+  /*.btn1{ @include btn($primary, $white, $none);}
+  .btn2{ @include btn(transparent, $aqua, 1px solid $aqua);}*/
+  /*.btnn{position: relative; font-size: 15px; color: aqua; border: 2px solid aqua; background: transparent;
+  margin: 0 20px; padding: 20px 60px; text-transform: uppercase; font-weight: bolder; transition: 0.4s all ease-in-out 0s;
+  }*/
+  height: 540px;
+  padding-top: 90px;
+}
+.banner .banner-content h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.banner .banner-content h4 {
+  margin-bottom: 75px;
+}
+.banner .banner-content h4 {
+  color: aliceblue;
+}
+.banner .banner-content .my-name {
+  color: aliceblue;
+  position: absolute;
+  top: 50%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191, 1px 4px 1px #919191, 1px 5px 1px #919191, 1px 6px 1px #919191, 1px 7px 1px #919191, 1px 8px 1px #919191;
+}
+.banner .banner-content .my-name h1 {
+  margin-bottom: 30px;
+  letter-spacing: 5px;
+}
+.banner .banner-content h3 {
+  color: #e6f3ff;
+}
+.banner .banner-content p {
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 20px;
+  color: #e6f3ff;
+}
+.banner .banner-content .btn2 {
+  padding: 20px 50px;
+  text-transform: uppercase;
+  border: 2px solid aliceblue;
+  background: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.banner .banner-content .btn2:hover {
+  transform: scale(1.01);
+  border: 1px solid aqua;
+}
+.banner .banner-content .btn1:hover {
+  background-color: blue;
+}
+.banner .banner-content .btnn:hover {
+  color: aliceblue;
+}
+.banner .banner-content .btn2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgb(14, 136, 136);
+  transition: 0.4s all ease-in-out 0s;
+}
+.banner .banner-content .btn2::before {
+  left: unset;
+  right: 0;
+  width: 0;
+}
+.banner .banner-content .btn2:hover::before {
+  right: unset;
+  left: 0;
+  width: 100%;
+}
+
+.poping .popup {
+  display: none;
+  width: 400px;
+  height: 400px;
+  background-color: grey;
+  position: absolute;
+  border-radius: 6px;
+  top: 30%;
+  left: 60%;
+  text-align: center;
+  color: rgb(0, 255, 85);
+  padding: 0 30px 30px;
+}
+.poping .popup h2 {
+  margin-top: 60px;
+}
+.poping .popup p {
+  margin-top: 20px;
+  line-height: 30px;
+}
+.poping .popup button {
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  outline: none;
+  border: 0;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+.poping .popup li {
+  margin-bottom: 10px;
+}
+.poping .popup a {
+  text-decoration: none;
+  color: aliceblue;
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.my-section {
+  display: flex;
+  height: 600px;
+}
+.my-section .about-me {
+  width: 20%;
+  margin: auto;
+  /*.btn3:hover{transform:scale(1.01); border: 1px solid rgb(255, 255, 255); background-color: darken ($aqua, 1%); color:$aqua;}*/
+}
+.my-section .about-me h3 {
+  color: aliceblue;
+  margin-bottom: 20px;
+}
+.my-section .about-me p {
+  color: #e6f3ff;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.my-section .about-me p:hover {
+  transform: scale(1.05);
+  color: rgb(0, 255, 85);
+}
+.my-section .about-me h3:hover {
+  transform: scale(1.05);
+  color: rgb(0, 255, 85);
+  text-transform: uppercase;
+}
+.my-section .about-me .btn3 {
+  padding: 20px 50px;
+  text-transform: uppercase;
+  border: 2px solid aliceblue;
+  background: transparent;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.my-section .about-me .btn3:hover {
+  transform: scale(1.01);
+  border: 1px solid aqua;
+}
+.my-section .about-me .btn3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgb(14, 136, 136);
+  transition: 0.4s all ease-in-out 0s;
+}
+.my-section .about-me .btn3::before {
+  left: unset;
+  right: 0;
+  width: 0;
+}
+.my-section .about-me .btn3:hover::before {
+  right: unset;
+  left: 0;
+  width: 100%;
+}
+.my-section .about-me .fading {
+  display: none;
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.my-section .about-me .fading .mypix {
+  margin-left: 100px;
+}
+.my-section .about-me .fading .mypix img {
+  width: 30px;
+  height: 60px;
+}
+.my-section .about-me h5 {
+  color: aliceblue;
+}
+.my-section .my-image {
+  width: 30%;
+  margin: auto;
+}
+.my-section .my-image img {
+  width: 100%;
+  height: 450px;
+}
+.my-section .my-image .me {
+  width: 458px;
+  height: 458px;
+  perspective: 500px;
+  border: 1px solid aliceblue;
+  background-color: #131339;
+}
+.my-section .my-image .me img {
+  transform: translate3d(-45px, -45px, 45px);
+}
+
+.services {
+  background-color: #131339;
+}
+.services .grid-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.services .grids {
+  width: 100%;
+  position: relative;
+}
+.services .grids-bg {
+  height: 300px;
+  background-size: cover;
+}
+.services .grids-top5 {
+  background-image: url(../images/Web-dev1.jpg);
+}
+.services .grids-top2 {
+  background-image: url(../images/Graphics2.jpg);
+}
+.services .grids-top3 {
+  background-image: url(../images/d-marketing2.jpg);
+}
+.services .grids-top4 {
+  background-image: url(../images/user-design1.jpg);
+}
+.services .grids-top6 {
+  background-image: url(../images/V-editing1.jpg);
+}
+.services .grids-top7 {
+  background-image: url(../images/d-marketing1.jpg);
+}
+.services .grid-label {
+  display: inline-block;
+  background-color: #131339;
+  padding: 3px 25px 3px 5px;
+  text-transform: uppercase;
+  color: aliceblue;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 20px;
+}
+.services .grid-overlay {
+  height: 300px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  display: none;
+}
+.services .overlay-content {
+  width: 60%;
+  margin: 20% auto;
+  color: aliceblue;
+  text-transform: uppercase;
+}
+.services .overlay-content a {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 10px 25px;
+  font-size: 14px;
+  border: 1px solid aliceblue;
+  display: inline-block;
+  margin-top: 10px;
+}
+.services h3 {
+  text-align: center;
+  font-size: 25px;
+  color: aliceblue;
+  margin-bottom: 10px;
+}
+
+.form {
+  width: 40%;
+  margin: 30px auto;
+}
+.form .form-group {
+  margin-bottom: 10px;
+}
+.form .form-group input, .form .form-group textarea {
+  background-color: #eeeeee;
+  border: none;
+  padding: 10px 5px;
+  outline: none;
+  width: 100%;
+  display: block;
+}
+.form .form-group textarea {
+  min-height: 50px;
+}
+.form .form-group button {
+  border: none;
+  background-color: #2d2d85;
+  color: #ffffff;
+  padding: 10px 30px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+.form .form-group button:hover {
+  background-color: #000099;
+}
+.form .form-group span {
+  font-size: 20px;
+  margin-left: 10px;
+  color: rgb(241, 88, 88);
+}
+
+.contact {
+  background-color: #4d4d4d;
+  height: 600px;
+  margin-top: 20px;
+}
+.contact h2, .contact label {
+  color: aliceblue;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #131339;
+  height: 90px;
+}
+footer .col1 {
+  padding-top: 40px;
+  gap: 50px;
+}
+footer .col1 .pix {
+  display: flex;
+}
+footer .col1 .pix img {
+  width: 30px;
+  height: 30px;
+}
+footer .col1 .pix .pix2 {
+  margin-left: 10px;
+}
+footer .col1 .pix .pix3 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+footer .col1 .pix .pix4 {
+  margin-left: 10px;
+}
+footer .col2 {
+  padding-top: 40px;
+}
+footer .col2 p {
+  color: aliceblue;
+}/*# sourceMappingURL=index.css.map */
